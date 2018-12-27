@@ -20,7 +20,7 @@ public class GeografijaDAO {
     private static GeografijaDAO instance = null;
     private static Connection conn;
     private Statement stmt;
-    private String url = "jdbc:sqlite:baza.db"; // ?????
+    private String url = "jdbc:sqlite:resources/baza.db"; // ?????
     private PreparedStatement upit;
     private ArrayList<Grad> gradovi;
     private ArrayList<Drzava> drzave;
