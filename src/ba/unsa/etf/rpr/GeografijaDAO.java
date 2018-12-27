@@ -2,6 +2,8 @@ package ba.unsa.etf.rpr;
 
 
 
+import org.intellij.lang.annotations.Language;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -56,7 +58,6 @@ public class GeografijaDAO {
     }
 
     public void kreirajTabele () throws SQLException {
-
         String sql = "CREATE TABLE IF NOT EXISTS gradovi(\n"
                 + " id integer PRIMARY KEY,\n"
                 + " naziv text NOT NULL UNIQUE,\n"
@@ -201,5 +202,8 @@ public class GeografijaDAO {
         }
         throw new IllegalArgumentException("Grad ne postoji");
     }
+
+
+
 
 }
