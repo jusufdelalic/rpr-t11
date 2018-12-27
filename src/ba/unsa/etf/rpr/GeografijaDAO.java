@@ -1,9 +1,6 @@
 package ba.unsa.etf.rpr;
 
 
-
-import org.intellij.lang.annotations.Language;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -202,8 +199,6 @@ public class GeografijaDAO {
         }
         throw new IllegalArgumentException("Grad ne postoji");
     }
-
-
 
 
 }
