@@ -8,9 +8,6 @@ import java.util.Scanner;
 
 public class Main {
 
-    // omogućuje korisniku da putem tastature unese naziv države,
-    // a zatim na ekran ispisuje poruku u obliku "Glavni grad države Država
-    // je Grad" ili "Nepostojeća država"
 
     private static void glavniGrad() {
 
@@ -66,9 +63,7 @@ public class Main {
         /*Connection conn = DriverManager.getConnection(jdbc:sqlite:filename);
         Statement stmt = conn.createStatement();
 
-        con = DriverManager.getConnection("jdbc:mysql://   /HR","root","passwp");
-        */
-        //GeografijaDAO instance = GeografijaDAO.getInstance();
+  */
 
 
         System.out.println("Gradovi su:\n" + ispisiGradove());

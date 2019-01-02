@@ -19,7 +19,7 @@ public class GeografijaDAO {
     private static GeografijaDAO instance = null;
     private static Connection conn;
     private Statement stmt;
-    private String url = "jdbc:sqlite:resources/baza.db"; // ?????
+    private String url = "jdbc:sqlite:baza.db";
     private PreparedStatement upit;
     private ArrayList<Grad> gradovi;
     private ArrayList<Drzava> drzave;
@@ -83,14 +83,14 @@ public class GeografijaDAO {
         drzave = new ArrayList<>();
 
         try {
-            //Class.forName("oracle.jdbc.driver.OracleDriver");
+            //Class.forName("org.sqlite.JDBC");
             conn = DriverManager.getConnection(url);
 
             kreirajTabele();
             napuniPodacima();
-/*
 
-            upit = conn.prepareStatement("INSERT INTO grad VALUES (?, ?, ?, NULL)");
+
+            upit = conn.prepareStatement("INSERT INTO gradovi VALUES (?, ?, ?, NULL)");
             for (var grad : gradovi) {
                 try {
                     upit.setInt(1, grad.getId());
@@ -100,7 +100,7 @@ public class GeografijaDAO {
                 } catch (SQLException ignored) {
                 }
             }
-            upit = conn.prepareStatement("INSERT  INTO drzava VALUES(?, ?, ?)");
+            upit = conn.prepareStatement("INSERT  INTO drzave VALUES(?, ?, ?)");
             for (var drzava : drzave) {
                 try {
                     upit.setInt(1, drzava.getId());
@@ -110,7 +110,7 @@ public class GeografijaDAO {
                 } catch (SQLException ignored) {
                 }
             }
-            upit = conn.prepareStatement("UPDATE grad SET drzava = ? WHERE id = ?");
+            upit = conn.prepareStatement("UPDATE gradovi SET drzava = ? WHERE id = ?");
             for (var grad : gradovi) {
                 try {
                     upit.setInt(1, grad.getDrzava().getId());
@@ -119,7 +119,7 @@ public class GeografijaDAO {
                 } catch (SQLException ignored) {
                 }
             }
-            */
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
