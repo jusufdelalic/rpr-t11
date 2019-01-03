@@ -1,12 +1,18 @@
 package ba.unsa.etf.rpr;
 
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main {
+public class Main extends Application {
 
 
     private static void glavniGrad() {
@@ -57,16 +63,24 @@ public class Main {
     }
 
 
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+
+        Parent root = FXMLLoader.load(getClass().getResource("Gradovi.fxml"));
+        primaryStage.setTitle("Gradovi"); //  naziv prozora
+        primaryStage.setScene(new Scene(root, 300, 200));
+        primaryStage.setResizable(false);
+        primaryStage.show(); // prikaz pozornice
+    }
 
     public static void main(String[] args) {
 
-        /*Connection conn = DriverManager.getConnection(jdbc:sqlite:filename);
-        Statement stmt = conn.createStatement();
-
-  */
 
 
         System.out.println("Gradovi su:\n" + ispisiGradove());
         glavniGrad();
+
+        launch(args);
+
     }
 }

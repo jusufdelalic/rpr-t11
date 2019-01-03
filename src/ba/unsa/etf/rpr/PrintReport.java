@@ -1,4 +1,6 @@
-/*import net.sf.jasperreports.engine.*;
+package ba.unsa.etf.rpr;
+
+import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.swing.JRViewer;
 
 import javax.swing.*;
@@ -8,8 +10,8 @@ import java.util.HashMap;
 
 public class PrintReport extends JFrame {
     public void showReport(Connection conn) throws JRException {
-        String reportSrcFile = getClass().getResource("/reports/biblioteka.jrxml").getFile();
-        String reportsDir = getClass().getResource("/reports/").getFile();
+        String reportSrcFile = getClass().getResource("/resources/gradovi.jrxml").getFile();
+        String reportsDir = getClass().getResource("/resources/").getFile();
 
         JasperReport jasperReport = JasperCompileManager.compileReport(reportSrcFile);
         // Fields for resources path
@@ -25,4 +27,4 @@ public class PrintReport extends JFrame {
         this.setSize(700, 500);
         this.setVisible(true);
     }
-}*/
+}

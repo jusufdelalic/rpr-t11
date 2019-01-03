@@ -1,6 +1,9 @@
 package ba.unsa.etf.rpr;
 
 
+import javafx.event.ActionEvent;
+import net.sf.jasperreports.engine.JRException;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -12,12 +15,11 @@ import java.util.Collections;
   Projekat treba da sadrži SQLite bazu podataka baza.db (relativni put je samo "baza.db" tj.
   datoteka treba da se nalazi u korijenskom direktoriju projekta) koja sadrži dvije tabele:
 
-
  */
 
 public class GeografijaDAO {
-    private static GeografijaDAO instance = null;
-    private static Connection conn;
+    private static GeografijaDAO instance = null; // static?
+    private  static  Connection conn; // static?
     private Statement stmt;
     private String url = "jdbc:sqlite:baza.db";
     private PreparedStatement upit;
@@ -199,6 +201,10 @@ public class GeografijaDAO {
         }
         throw new IllegalArgumentException("Grad ne postoji");
     }
+
+    public static Connection getConn() { return conn; }
+
+
 
 
 }
